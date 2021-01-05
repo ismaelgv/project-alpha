@@ -1,4 +1,4 @@
-package igv.projects.alphabackend;
+package igv.projects.alphacrud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

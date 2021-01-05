@@ -1,4 +1,4 @@
-package igv.projects.alphabackend;
+package igv.projects.alphacrud;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

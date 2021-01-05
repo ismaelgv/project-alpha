@@ -8,9 +8,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>igv.projects</groupId>
-	<artifactId>alpha-backend</artifactId>
+	<artifactId>alpha-crud</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>alpha-backend</name>
+	<name>alpha-crud</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

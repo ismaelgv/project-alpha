@@ -1,4 +1,5 @@
-package igv.projects.alphabackend.entities;
+
+package igv.projects.alphacrud.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -6,7 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import igv.projects.alphabackend.MoodEnum;
+import igv.projects.alphacrud.MoodEnum;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
@@ -16,15 +17,15 @@ import lombok.RequiredArgsConstructor;
 @Data
 @NoArgsConstructor
 @RequiredArgsConstructor
-@Table(name = "question")
-public class Question {
+@Table(name = "answer")
+public class Answer {
 	@Id
 	@GeneratedValue
 	private long id;
 
 	@Column(unique = true)
 	@NonNull
-	private String question;
+	private String answer;
 	@NonNull
 	private MoodEnum mood;
 }

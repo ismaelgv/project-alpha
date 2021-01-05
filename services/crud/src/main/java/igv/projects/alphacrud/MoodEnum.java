@@ -1,4 +1,4 @@
-package igv.projects.alphabackend;
+package igv.projects.alphacrud;
 
 import lombok.Getter;
 import lombok.ToString;
