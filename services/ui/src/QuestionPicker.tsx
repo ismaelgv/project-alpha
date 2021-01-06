@@ -2,6 +2,12 @@ import "./App.css";
 
 import { Button, ButtonGroup } from "reactstrap";
 
+/**
+ * Generate buttons for each question.
+ *
+ * @param questions The array of questions to be processed.
+ * @returns Array of reactstrap.Button.
+ */
 function generateButtons(questions: string[]): JSX.Element[] {
   const buttons: JSX.Element[] = [];
 
