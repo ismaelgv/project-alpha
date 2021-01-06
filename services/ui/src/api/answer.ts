@@ -22,10 +22,7 @@ export async function getAnswer(): Promise<string> {
     .get<AnswersResponse>(config.crudUrl + "answers/search/randomAnswers", {
       params: { size: 1 },
     })
-    .then((res) => {
-      console.log(res.data);
-      return res.data._embedded.answers[0].answer;
-    })
+    .then((res) => res.data._embedded.answers[0].answer)
     .catch((e) => {
       console.warn("Error getting answers, fallback to mockup.", e);
       return pickRandomItem(mockAnswers);
