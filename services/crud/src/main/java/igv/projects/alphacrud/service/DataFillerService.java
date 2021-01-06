@@ -32,10 +32,10 @@ public class DataFillerService {
 			// @formatter:off
 			Stream<String> questions = Stream.of(
 					"Will I be the next president of the world?",
-					"Will I be the next Steve Jobs",
+					"Will I be the next Steve Jobs?",
 					"Will I be rich and famous?",
 					"Will I revolutionize the world?",
-					"Will the future generations remebember me as the new Mesiah?"
+					"Will future generations remember me as the new Mesiah?"
 					);
 			// @formatter:on
 			var questionList = questions.map(q -> new Question(q, MoodEnum.HAPPY)).collect(Collectors.toList());
