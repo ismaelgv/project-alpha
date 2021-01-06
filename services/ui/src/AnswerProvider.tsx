@@ -27,7 +27,7 @@ function AnswerProvider({ answer }: AnswerProviderProps) {
         updateImg(imageToLoad.src);
       };
     }
-  }, []);
+  }, [currentImg]);
 
   if (loading) {
     return (
