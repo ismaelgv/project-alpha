@@ -1,4 +1,4 @@
-import "./App.css";
+import "./QuestionPicker.css";
 
 import { Button, ButtonGroup } from "reactstrap";
 
@@ -30,7 +30,7 @@ type QuestionPickerProps = {
 
 function QuestionPicker({ questions, buttonAction }: QuestionPickerProps) {
   return (
-    <div className="App-options">
+    <div className="QuestionPicker-buttons">
       <p>Choose your question</p>
       <ButtonGroup vertical onClick={buttonAction}>
         {generateButtons(questions)}

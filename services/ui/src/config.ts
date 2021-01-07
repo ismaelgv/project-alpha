@@ -4,8 +4,8 @@ interface Config {
 }
 
 const config: Config = {
-    screamerUrl: "api/screamer/",
-    crudUrl: "api/crud/",
+    screamerUrl: "api/screamer",
+    crudUrl: "api/crud",
 }
 
 export default config;

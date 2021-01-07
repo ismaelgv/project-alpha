@@ -1,4 +1,4 @@
-import "./App.css";
+import "./AnswerProvider.css";
 import { useEffect, useState } from "react";
 
 import {
@@ -31,19 +31,23 @@ function AnswerProvider({ answer }: AnswerProviderProps) {
 
   if (loading) {
     return (
-      <Card className="App-answer">
+      <Card className="AnswerProvider-answer">
         <Spinner color="info" />
-        <CardTitle className="App-answer-title">Loading answer...</CardTitle>
+        <CardTitle className="AnswerProvider-answer-title">
+          Loading answer...
+        </CardTitle>
       </Card>
     );
   } else {
     return (
-      <Card className="App-answer">
+      <Card className="AnswerProvider-answer">
         <CardImg top height="300" width="400" src={currentImg}></CardImg>
-        <CardTitle className="App-answer-title">Your Coach says:</CardTitle>
+        <CardTitle className="AnswerProvider-answer-title">
+          Your Coach says:
+        </CardTitle>
         <CardText>{answer}</CardText>
         <Button
-          className="App-answer-reload-button"
+          className="AnswerProvider-answer-reload-button"
           onClick={() => window.location.reload(true)}
         >
           Restart

@@ -1,0 +1,30 @@
+.AnswerProvider-answer {
+  align-items: center;
+  background-color: #282c34;
+  color: #EAEAEA;
+
+  font-size: calc(14px + 2vmin);
+  border-radius: 10px;
+
+  padding: 2%;
+
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.AnswerProvider-answer-title {
+  padding-top: +5%;
+  color: #AAAAAA;
+
+  font-style: italic;
+  font-size: calc(10px + 1vmin);
+}
+
+.AnswerProvider-answer-reload-button {
+  text-align: center;
+  width: 50%;
+}
