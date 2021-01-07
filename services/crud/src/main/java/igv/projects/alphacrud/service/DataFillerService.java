@@ -30,11 +30,11 @@ public class DataFillerService {
 		if (questionDAO.count() == 0) {
 			// @formatter:off
 			Stream<String> questions = Stream.of(
-					"Will I be the next president of the world?",
-					"Will I be the next Steve Jobs?",
-					"Will I be rich and famous?",
-					"Will I revolutionize the world?",
-					"Will future generations remember me as the new Mesiah?"
+					"CRUD Question 1",
+					"CRUD Question 2",
+					"CRUD Question 3",
+					"CRUD Question 4",
+					"CRUD Question 5"
 					);
 			// @formatter:on
 			var questionList = questions.map(q -> new Question(q, MoodEnum.HAPPY)).collect(Collectors.toList());
@@ -44,11 +44,11 @@ public class DataFillerService {
 		if (answerDAO.count() == 0) {
 			// @formatter:off
 			Stream<String> answers = Stream.of(
-					"You are great and you will achieve anything you want in this life.",
-					"You are going to be even better than that.",
-					"The whole industry envy you.",
-					"Today is the next day in the road to your success.",
-					"You are awesome."
+					"CRUD Answer 1",
+					"CRUD Answer 2",
+					"CRUD Answer 3",
+					"CRUD Answer 4",
+					"CRUD Answer 5"
 					);
 			// @formatter:on
 			var answerList = answers.map(q -> new Answer(q, MoodEnum.HAPPY)).collect(Collectors.toList());
