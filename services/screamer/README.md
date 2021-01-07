@@ -5,7 +5,7 @@ This service will scream all the content that you send to it.
 
 ## Documentation
 You can check all the OpenAPI documentation of the service in the endpoint:
-`http://serviceurl:8080/docs`
+`http://serviceurl:8000/docs`
 
 
 ## Run Screamer service
@@ -36,5 +36,5 @@ docker build -t screamer .
 
 You can run the service using Docker:
 ```
-docker run --rm -p 8000:8000 screamer
+docker run --rm -it --name alpha-screamer -p 8000:8000 screamer
 ```
