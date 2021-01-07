@@ -5,15 +5,15 @@ from pydantic import BaseModel, Field
 
 class Answer(BaseModel):
     """An incredible answer."""
-    id: int = Field(..., description="Unique ID")
+    id: Optional[int] = Field(None, description="Unique ID")
     answer: str = Field(..., description="A fucking awesome answer.")
-    mood: Optional[int]
+    mood: Optional[int] = None
 
 class Question(BaseModel):
     """A real interesting question."""
-    id: int = Field(..., description="Unique ID")
+    id: Optional[int] = Field(None, description="Unique ID")
     question: str = Field(..., description="An amazing question.")
-    mood: Optional[int]
+    mood: Optional[int] = None
 
 app = FastAPI()
 
