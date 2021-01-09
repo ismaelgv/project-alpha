@@ -1,4 +1,4 @@
-FROM node:12-alpine as build
+FROM node:12-alpine as builder
 
 WORKDIR /app
 
@@ -9,4 +9,4 @@ COPY . ./
 RUN yarn build
 
 FROM nginx:stable-alpine
-COPY --from=build /app/build /usr/share/nginx/html
+COPY --from=builder /app/build /usr/share/nginx/html
