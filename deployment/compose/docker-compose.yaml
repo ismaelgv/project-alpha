@@ -1,0 +1,53 @@
+version: "3"
+services:
+  gateway:
+    image: nginx:stable-alpine
+    depends_on:
+      - ui
+      - screamer
+      - crud
+    networks:
+      - alpha-net
+    ports:
+      - 80:80
+    volumes:
+      - ./gateway/conf.d:/etc/nginx/conf.d
+
+  postgres:
+    image: postgres:11
+    networks:
+      - alpha-net
+    environment:
+      - POSTGRES_DB=alpha
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+    # Populate database if empty
+    volumes:
+      - ../../services/db/preload.sql:/docker-entrypoint-initdb.d/preload.sql
+
+  ui:
+    image: alpha-ui
+    build: ../../services/ui/
+    networks:
+      - alpha-net
+
+  screamer:
+    image: alpha-screamer
+    build: ../../services/screamer/
+    networks:
+      - alpha-net
+
+  crud:
+    image: alpha-crud
+    build: ../../services/crud/
+    depends_on:
+      - postgres
+    networks:
+      - alpha-net
+    environment:
+      - CRUD_DB_HOST=postgres
+      - CRUD_DB_PORT=5432
+      - CRUD_DB_USERNAME=postgres
+      - CRUD_DB_PASSWORD=${DB_PASSWORD}
+
+networks:
+  alpha-net:

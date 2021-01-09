@@ -4,6 +4,14 @@
 
 This is a playground project to test different technologies in a K8s deployment.
 
+## Deployment
+
+### Docker Compose
+You can deploy the project using Docker Compose too. You can find more
+information in the [*Deployment Compose*](deployment/compose).
+
+## Services
+
 Currently you can find the following services:
 
 - [**CRUD**](services/crud/):
