@@ -11,7 +11,7 @@ directory running the following command:
 
 ```
 docker run --name alpha-postgres \
-  -v ./preload.sql:/docker-entrypoint-initdb.d/preload.sql \
+  -v ${PWD}/preload.sql:/docker-entrypoint-initdb.d/preload.sql \
   -p 5432:5432 \
   -e POSTGRES_PASSWORD=1234 -e POSTGRES_DB=alpha \
   -d postgres:11
