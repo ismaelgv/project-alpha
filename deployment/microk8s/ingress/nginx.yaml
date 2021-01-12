@@ -1,0 +1,31 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: ui-ingress
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /
+            backend:
+              serviceName: alpha-ui
+              servicePort: 80
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: backend-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /api/screamer(/|$)(.*)
+            backend:
+              serviceName: alpha-screamer
+              servicePort: 8000
+          - path: /api/crud(/|$)(.*)
+            backend:
+              serviceName: alpha-crud
+              servicePort: 8080

@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alpha-crud
+  labels:
+    app: alpha-crud
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: alpha-crud
+  template:
+    metadata:
+      labels:
+        app: alpha-crud
+    spec:
+      containers:
+        - name: alpha-crud
+          image: localhost:32000/alpha-crud:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: CRUD_DB_HOST
+              value: alpha-postgres
+            - name: CRUD_DB_PORT
+              value: "5432"
+            - name: CRUD_DB_NAME
+              valueFrom:
+                  configMapKeyRef:
+                    name: alpha-postgres-config
+                    key: db
+            - name: CRUD_DB_USERNAME
+              valueFrom:
+                  configMapKeyRef:
+                    name: alpha-postgres-config
+                    key: username
+            - name: CRUD_DB_PASSWORD
+              valueFrom:
+                  secretKeyRef:
+                    name: alpha-postgres-secret
+                    key: password
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: alpha-crud
+spec:
+  selector:
+    app: alpha-crud
+  ports:
+    - protocol: TCP
+      port: 8080
