@@ -2,7 +2,18 @@
 
 ## Description
 
+Project Alpha offers you a top-notch(-ish) personal Coach with a Web interface!
+
 This is a playground project to test different technologies in a K8s deployment.
+It uses the following technologies among others:
+- Kubernetes
+- Docker
+- MicroK8s
+- Docker Compose
+- Spring Boot (Java)
+- FastAPI (Python)
+- React (TypeScript)
+- PosgreSQL
 
 ## Deployment
 
