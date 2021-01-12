@@ -6,9 +6,12 @@ This is a playground project to test different technologies in a K8s deployment.
 
 ## Deployment
 
-### Docker Compose
-You can deploy the project using Docker Compose too. You can find more
-information in the [*Deployment Compose*](deployment/compose).
+- MicroK8s:
+  You can deploy the project using MicroK8s. You can find more
+  information in the [*Deployment MicroK8s*](deployment/microk8s).
+- Docker Compose:
+  You can deploy the project using Docker Compose. You can find more
+  information in the [*Deployment Compose*](deployment/compose).
 
 ## Services
 
