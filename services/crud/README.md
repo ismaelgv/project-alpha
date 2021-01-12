@@ -22,6 +22,7 @@ environmental variables:
 | ------------------ | --------------------------- | ------------- |
 | `CRUD_DB_HOST`     | Hostname of the running DB. | `localhost`   |
 | `CRUD_DB_PORT`     | Port of the DB.             | `5432`        |
+| `CRUD_DB_NAME`     | Database name.              | `alpha`       |
 | `CRUD_DB_USERNAME` | DB username.                | `postgres`    |
 | `CRUD_DB_PASSWORD` | DB username password.       | `1234`        |
 
