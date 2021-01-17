@@ -1,6 +1,6 @@
 #!/bin/bash
 
-script_path=$(dirname $0)
+script_path=$(dirname "$0")
 base_path="${script_path}/../../../services"
 services=('crud' 'ui' 'screamer')
 repository='localhost:32000'
