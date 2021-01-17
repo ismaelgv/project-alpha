@@ -1,0 +1,14 @@
+crud:
+  replicaCount: 3
+
+ui:
+  replicaCount: 3
+
+screamer:
+  replicaCount: 3
+
+postgres:
+  # These values are only valid for DB initialization
+  username: postgres
+  db: alpha
+  password: 1234alpha

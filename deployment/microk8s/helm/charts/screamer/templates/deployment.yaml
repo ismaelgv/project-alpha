@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "project-alpha.name" . }}
+  labels: {{- include "project-alpha.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels: {{- include "project-alpha.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels: {{- include "project-alpha.labels" . | nindent 8 }}
+    spec:
+      containers:
+        - name: alpha-screamer
+          image: localhost:32000/alpha-screamer:latest
+          ports:
+            - containerPort: 8000

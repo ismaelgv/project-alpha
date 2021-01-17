@@ -31,3 +31,16 @@ files in the [`classic` directory](classic/).
    ```
 3. You should be able to access to the application in your web browser simply
    using [`http://localhost`](http://localhost).
+
+### Helm
+
+You need `helm` add-on installed in your `microk8s` instance or in your host.
+You can find the related files in the [`helm` directory](helm/).
+
+1. You can configure some parameters in `helm/values.yaml`.
+2. Install the Chart in your K8s cluster:
+   ```
+   microk8s helm upgrade --install alpha
+   ```
+3. You should be able to access to the application in your web browser simply
+   using [`http://localhost`](http://localhost).

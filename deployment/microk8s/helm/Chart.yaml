@@ -1,0 +1,5 @@
+apiVersion: v2
+name: project-alpha
+description: Project Alpha Helm Chart
+type: application
+version: 0.1.0

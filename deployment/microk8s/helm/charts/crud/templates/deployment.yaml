@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "project-alpha.name" . }}
+  labels: {{- include "project-alpha.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels: {{- include "project-alpha.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels: {{- include "project-alpha.labels" . | nindent 8 }}
+    spec:
+      containers:
+        - name: alpha-crud
+          image: localhost:32000/alpha-crud:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: CRUD_DB_HOST
+              value: {{ .Release.Name }}-postgres
+            - name: CRUD_DB_PORT
+              value: "5432"
+            - name: CRUD_DB_NAME
+              valueFrom:
+                  configMapKeyRef:
+                    name: {{ .Release.Name }}-postgres-config
+                    key: db
+            - name: CRUD_DB_USERNAME
+              valueFrom:
+                  configMapKeyRef:
+                    name: {{ .Release.Name }}-postgres-config
+                    key: username
+            - name: CRUD_DB_PASSWORD
+              valueFrom:
+                  secretKeyRef:
+                    name: {{ .Release.Name }}-postgres-secret
+                    key: password

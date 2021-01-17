@@ -1,0 +1,5 @@
+apiVersion: v2
+name: ui
+description: Project Alpha UI
+type: application
+version: 0.1.0
