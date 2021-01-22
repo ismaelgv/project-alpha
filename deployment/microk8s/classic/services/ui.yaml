@@ -13,6 +13,8 @@ spec:
     metadata:
       labels:
         app: alpha-ui
+      annotations:
+        linkerd.io/inject: enabled
     spec:
       containers:
         - name: alpha-ui

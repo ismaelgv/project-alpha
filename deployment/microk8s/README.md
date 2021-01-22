@@ -7,6 +7,7 @@
   - Ingress
   - Storage
   - [Registry](https://microk8s.io/docs/registry-built-in)
+  - Linkerd
 
 ## Deployment
 
