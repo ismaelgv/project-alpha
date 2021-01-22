@@ -9,10 +9,10 @@ tag='latest'
 echo "Build and push docker images to: ${repository}"
 
 for service in "${services[@]}"; do
-    echo -e "\nBuilding ${service}..."
+    echo -e "\n\n\n# Building ${service} =======================#"
     service_path="${base_path}/${service}"
     service_tag="${tag}"
-    service_image="${repository}/${service}:${service_tag}"
+    service_image="${repository}/alpha-${service}:${service_tag}"
     docker build -t "${service_image}" "${service_path}"
     docker push "${service_image}"
 done
