@@ -7,8 +7,11 @@ Project Alpha offers you a top-notch(-ish) personal Coach with a Web interface!
 This is a playground project to test different technologies in a K8s deployment.
 It uses the following technologies among others:
 - Kubernetes
-- Docker
 - MicroK8s
+- Helm
+- Linkerd
+- Nginx and Nginx Ingress
+- Docker
 - Docker Compose
 - Spring Boot (Java)
 - FastAPI (Python)
@@ -17,9 +20,9 @@ It uses the following technologies among others:
 
 ## Deployment
 
-- MicroK8s:
-  You can deploy the project using MicroK8s. You can find more
-  information in the [*Deployment MicroK8s*](deployment/microk8s).
+- Kubernetes:
+  You can deploy the project using Kubernetes You can find more
+  information in the [*Deployment Kubernetes*](deployment/kubernetes).
 - Docker Compose:
   You can deploy the project using Docker Compose. You can find more
   information in the [*Deployment Compose*](deployment/compose).
