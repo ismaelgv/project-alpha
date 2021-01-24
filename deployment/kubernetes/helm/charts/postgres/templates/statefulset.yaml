@@ -11,6 +11,7 @@ spec:
   template:
     metadata:
       labels: {{- include "project-alpha.labels" . | nindent 8 }}
+      annotations: {{- include "project-alpha.enableLinkerd" . | nindent 8 }}
     spec:
       containers:
       - name: postgres

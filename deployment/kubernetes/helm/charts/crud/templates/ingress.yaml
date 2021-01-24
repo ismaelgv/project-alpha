@@ -4,6 +4,7 @@ metadata:
   name: {{ include "project-alpha.name" . }}
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /$2
+    {{- include "project-alpha.ingressLinkerd" . | nindent 4 }}
 spec:
   rules:
     - http:
